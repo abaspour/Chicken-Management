@@ -15,6 +15,7 @@ page 50100 "Egg Production Subpage"
                 field("Chicken No."; rec."Chicken No.")
                 {
                     ToolTip='Provide Chicken No.';
+                
                 }
                 field("Chicken Description";rec."Chicken Description")
                 {

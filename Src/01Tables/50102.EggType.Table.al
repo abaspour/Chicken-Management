@@ -2,22 +2,22 @@ table 50102 EggType
 {
     DataClassification = ToBeClassified;
     Caption = 'Egg Type';
-    
+
     fields
     {
-        field(1;"Code"; Code[20])
+        field(1; "Code"; Code[20])
         {
             DataClassification = CustomerContent;
             Caption = 'Egg Type Code';
             NotBlank = true;
         }
-        field(2;"Description"; Text[100])
+        field(2; "Description"; Text[100])
         {
             DataClassification = CustomerContent;
-            Caption='Egg Type Description';           
-        } 
+            Caption = 'Egg Type Description';
+        }
     }
-    
+
     keys
     {
         key(PK; "Code")
@@ -25,33 +25,14 @@ table 50102 EggType
             Clustered = true;
         }
     }
-    
-    fieldgroups
-    { 
-       
-    }
-    
+
+    procedure InsertEggType(EggTypeCode: Code[20]; EggTypeDescription: Text[50])
     var
-        myInt: Integer;
-    
-    trigger OnInsert()
+        EggType: Record "EggType";
     begin
-        
+        Clear(EggType);
+        EggType.Code := EggTypeCode;
+        EggType.Description := EggTypeDescription;
+        EggType.Insert(true);
     end;
-    
-    trigger OnModify()
-    begin
-        
-    end;
-    
-    trigger OnDelete()
-    begin
-        
-    end;
-    
-    trigger OnRename()
-    begin
-        
-    end;
-    
 }
