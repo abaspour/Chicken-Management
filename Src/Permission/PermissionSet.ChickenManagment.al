@@ -24,5 +24,6 @@ permissionset 50101 "Chicken Managment "
         page "Egg Production List" = X,
         page "Egg Production Document" = X,
         page "Egg Production Subpage" = X,
+        page "Customer API" = X,
         codeunit Installation = X;
 }
